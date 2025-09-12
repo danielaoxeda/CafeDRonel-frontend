@@ -1,20 +1,12 @@
-# Café D’ Ronel - Frontend ☕
+# React + Vite
 
-Este repositorio contiene el **frontend del sistema web de Café D’ Ronel**, desarrollado con **React y Tailwind CSS**.  
-La aplicación está compuesta por dos interfaces principales:
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-- **Cliente:** permite visualizar el catálogo de cafés, añadir productos al carrito y realizar pedidos en línea.  
-- **Administrador:** facilita la gestión de productos, control de pedidos, usuarios y monitoreo de ventas.  
+Currently, two official plugins are available:
 
-## 🚀 Tecnologías utilizadas
-- React
-- Tailwind CSS
-- Axios (para consumo de API REST)
-- React Router (para navegación)
-- **Zustand** (estado global para cliente y administrador)
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## 📦 Instalación y ejecución
-1. Clonar el repositorio:
-   ```bash
-   git clone https://github.com/DanielaFernandaOjedaArrelucea/CafeDRonel-frontend.git
-   cd CafeDRonel-frontend
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
