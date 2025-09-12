@@ -11,6 +11,7 @@ La aplicación está compuesta por dos interfaces principales:
 - Tailwind CSS
 - Axios (para consumo de API REST)
 - React Router (para navegación)
+- **Zustand** (estado global para cliente y administrador)
 
 ## 📦 Instalación y ejecución
 1. Clonar el repositorio:
