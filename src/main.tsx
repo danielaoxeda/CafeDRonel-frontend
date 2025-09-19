@@ -8,7 +8,8 @@ import ProductsPage from "./pages/dashboard/ProductsPage.tsx";
 import ClientsPage from "./pages/dashboard/ClientsPage.tsx";
 import ReportsPage from "./pages/dashboard/ReportsPage.tsx";
 import SettingsPage from "./pages/dashboard/SettingsPage.tsx";
-import DashboardLayout from "./pages/dashboard/Layout.tsx";
+import DashboardLayout from "./pages/dashboard/DashboardLayout.tsx";
+import {Toaster} from "sonner";
 
 const router = createBrowserRouter([
     {
@@ -45,6 +46,7 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')!).render(
     <StrictMode>
+        <Toaster richColors position="bottom-right"/>
         <RouterProvider router={router}/>
     </StrictMode>,
 )

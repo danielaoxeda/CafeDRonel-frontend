@@ -13,6 +13,9 @@ La aplicación está compuesta por dos interfaces principales:
 - Axios (para consumo de API REST)
 - React Router (para navegación)
 - Zustand (estado global para cliente y administrador)
+- Sonner (Componente de notificaciones)
+- React Data Table Component (Para representar datos en una tabla)
+- Lucide Icons (Iconos)
 
 ## 📦 Instalación y ejecución
 
