@@ -2,26 +2,26 @@ import {StrictMode} from 'react'
 import {createRoot} from 'react-dom/client'
 import './index.css'
 import {createBrowserRouter, RouterProvider} from "react-router";
-import HomePageEcommerce from "./pages/ecommerce/HomePage.tsx";
-import HomePageDashboard from "./pages/dashboard/HomePage.tsx";
+import EcommerceHomePage from "./pages/ecommerce/HomePage.tsx";
+import DashboardHomePage from "./pages/dashboard/HomePage.tsx";
 import ProductsPage from "./pages/dashboard/ProductsPage.tsx";
 import ClientsPage from "./pages/dashboard/ClientsPage.tsx";
 import ReportsPage from "./pages/dashboard/ReportsPage.tsx";
 import SettingsPage from "./pages/dashboard/SettingsPage.tsx";
-import LayoutDashboard from "./pages/dashboard/Layout.tsx";
+import DashboardLayout from "./pages/dashboard/Layout.tsx";
 
 const router = createBrowserRouter([
     {
         path: "/",
-        Component: HomePageEcommerce
+        Component: EcommerceHomePage
     },
     {
         path: "/dashboard",
-        Component: LayoutDashboard,
+        Component: DashboardLayout,
         children: [
             {
                 path: "home",
-                Component: HomePageDashboard
+                Component: DashboardHomePage
             },
             {
                 path: "products",

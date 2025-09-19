@@ -53,7 +53,7 @@ export default function Sidebar() {
             <div className="pb-10 flex items-center justify-between w-full pt-6 h-30">
                 {/*Todo: Aquí falta el logo no lo tengo xd*/}
                 {/*Todo: No me gusta como queda cambiar en un futuro o no*/}
-                <Link to="/dashboard/home" className={`${active ? "block" : "hidden"} text-white text-xl font-bold`}>Coffe
+                <Link to="/dashboard/home" className={`${active ? "block" : "hidden"} text-white text-xl font-bold`}>Coffee
                     D'Ronel</Link>
                 <button
                     className={`text-white h-full p-2 rounded-lg cursor-pointer outline-0 hover:bg-accent transition-all ${!active && "w-full flex items-center justify-center"}`}
