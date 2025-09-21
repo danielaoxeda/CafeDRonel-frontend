@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 @theme {
-    --color-primary: #D7652A;      /* the color you'll highlight most, for buttons, links, etc */
-    --color-secondary: #F4BC5D;    /* companion, lighter/friendlier */
-    --color-accent: #984200;       /* support, to highlight certain elements or hover */
+    --color-primary: #984200;      /* the color you'll highlight most, for buttons, links, etc */
+    --color-secondary:#360201;    /* companion, lighter/friendlier */
+    --color-accent: #F4BC5D;       /* support, to highlight certain elements or hover */
     --color-danger: #490206;/* very dark tone / wine-red for alerts, dark backgrounds */
     --color-muted: #360201;/* the darkest, for text, deep backgrounds, soft borders */
 }
