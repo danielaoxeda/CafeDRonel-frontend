@@ -1,9 +1,9 @@
-import { useUser } from "../../../User/UserContext";
-import { Notifications } from "../notificactions/Notifications";
 import { UserAvatar } from "../../../User/UserAvatar";
+import { useUserStore } from "../../../User/UserState";
+import { Notifications } from "../notificactions/Notifications";
 
 export function Header() {
-  const { user } = useUser(); 
+  const { user } = useUserStore();
 
   return (
     <div className="flex justify-between items-center mb-10 px-0 pt-8">
@@ -15,4 +15,3 @@ export function Header() {
     </div>
   );
 }
-

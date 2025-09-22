@@ -30,10 +30,10 @@ export function Security() {
 
   return (
     <div>
-      <h2 className="text-xl font-semibold mb-4">Seguridad</h2>
+      <h2 className="text-xl font-semibold mb-8">Seguridad</h2>
 
       {/* Formulario de cambio de contraseña */}
-      <form onSubmit={handlePasswordChange} className="max-w-lg space-y-4">
+      <form onSubmit={handlePasswordChange} className="max-w-lg space-y-4 ml-14">
         <div>
           <label className="block text-sm font-medium">Contraseña actual</label>
           <input
@@ -75,7 +75,8 @@ export function Security() {
       {/* Separador */}
       <div className="my-8 border-t border-gray-300"></div>
 
-      <div>
+      {/* Cerrar sesión */}
+      <div className="ml-14">
         <h3 className="text-lg font-medium mb-2">Cerrar sesión</h3>
         <p className="text-sm text-gray-600 mb-4">
           Puedes cerrar tu sesión en todos los dispositivos activos por seguridad.

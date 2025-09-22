@@ -1,9 +1,9 @@
-import { useUser } from "../../../User/UserContext";
+import { useUserStore } from "../../../User/UserState";
 import { UserAvatar } from "../../../User/UserAvatar";
 
 
 export default function UserCard() {
-  const { user } = useUser();
+  const { user } = useUserStore();
 
   return (
     <div className="flex flex-col items-center bg-white shadow-md rounded-2xl p-6 text-center">

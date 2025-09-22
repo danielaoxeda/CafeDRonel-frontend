@@ -1,6 +1,4 @@
 import { User, Image, Lock } from "lucide-react";
-import { UserProvider } from "../User/UserContext";
-
 type SidebarSettings = {
   activeTab: string;
   setActiveTab: (tab: string) => void;
@@ -14,8 +12,8 @@ const tabs = [
 
 export function Sidebar({ activeTab, setActiveTab }: SidebarSettings) {
   return (
-    <UserProvider>
-    <div className="w-48 h-80 rounded-md bg-white shadow-md p-6">
+
+    <div className="w-72 h-90 ml-0 rounded-md bg-white shadow-md p-6">
       <h2 className="text-xl font-bold mb-6">Configuración</h2>
       <ul className="space-y-3">
         {tabs.map(({ id, label, icon: Icon }) => (
@@ -35,6 +33,6 @@ export function Sidebar({ activeTab, setActiveTab }: SidebarSettings) {
         ))}
       </ul>
     </div>
-    </UserProvider>
+
   );
 }

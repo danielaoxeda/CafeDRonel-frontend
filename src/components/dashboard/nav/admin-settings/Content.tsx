@@ -17,10 +17,10 @@ export function Content() {
 
   return (
     <div>
-      <h2 className="text-xl font-semibold mb-4">Gestión de contenido</h2>
-      <div className="flex flex-col gap-8 ml-8">
+      <h2 className="text-xl font-semibold mb-12">Gestión de contenido</h2>
+      <div className="flex flex-row gap-8 ml-12">
         {/* Banner */}
-        <div className="flex flex-row items-center">
+        <div className="flex flex-col items-center gap-6">
           <UploadCard
             title="Actualizar Banner"
             accept="image/*,video/*"
@@ -37,7 +37,7 @@ export function Content() {
         </div>
 
         {/* Promoción */}
-        <div className="flex flex-row items-center">
+        <div className="flex flex-col items-center gap-6">
           <UploadCard
             title="Actualizar Promoción"
             accept="image/*,video/*"
