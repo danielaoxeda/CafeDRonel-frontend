@@ -49,8 +49,9 @@ export default function Sidebar() {
 
     return (
         <nav
-            className={`${active ? "w-50" : "w-20"} max-h-screen h-screen flex flex-col justify-between bg-primary p-4 transition-all`}>
-            <div className="pb-10 flex items-center justify-between w-full pt-6 h-30">
+             className={`${active ? "w-56" : "w-20"} h-screen flex flex-col justify-between bg-primary p-4 transition-all fixed top-0 left-0`}>
+
+            <div className="pb-10 flex items-center justify-between w-full pt-6 ">
                 {/*Todo: Aquí falta el logo no lo tengo xd*/}
                 {/*Todo: No me gusta como queda cambiar en un futuro o no*/}
                 <Link to="/dashboard/home" className={`${active ? "block" : "hidden"} text-white text-xl font-bold`}>Coffee

@@ -8,4 +8,5 @@ export default function Layout() {
             <Outlet/>
         </div>
     );
+
 }
