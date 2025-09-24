@@ -1,4 +1,3 @@
-
 type UserAvatarProps = {
   name?: string;
   size?: number; 
