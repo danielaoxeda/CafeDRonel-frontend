@@ -16,6 +16,11 @@ La aplicación está compuesta por dos interfaces principales:
 - Sonner (Componente de notificaciones)
 - React Data Table Component (Para representar datos en una tabla)
 - Lucide Icons (Iconos)
+- Recharts (reportes y visualización de datos)
+  
+## 👥 Contribución
+
+Este es un proyecto grupal desarrollado por estudiantes de Ingeniería de Sistemas y Software de la Universidad Tecnológica del Perú.
 
 ## 📦 Instalación y ejecución
 
@@ -23,3 +28,15 @@ La aplicación está compuesta por dos interfaces principales:
    ```bash
    git clone https://github.com/DanielaFernandaOjedaArrelucea/CafeDRonel-frontend.git
    cd CafeDRonel-frontend
+   
+2. Instalar dependencias:
+    ```bash
+   npm install
+    
+3. Ejecutar la aplicación en modo desarrollo:
+   ```bash
+   npm run dev
+   
+4. Abrir el navegador (Ctrl+Click):
+    ```bash
+   http://localhost:5173/
