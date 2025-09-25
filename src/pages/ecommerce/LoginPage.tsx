@@ -1,4 +1,5 @@
 import {MapPinIcon} from "lucide-react";
+import LoginForm from "../../components/forms/LoginForm";
 
 export default function LoginPage() {
     return (

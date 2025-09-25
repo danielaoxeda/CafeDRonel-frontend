@@ -1,5 +1,5 @@
-import { useUserStore } from "../../../User/UserState";
-import { UserAvatar } from "../../../User/UserAvatar";
+import { useUserStore } from "../../../store/userStore";
+import { UserAvatar } from "../../User/UserAvatar";
 
 
 export default function UserCard() {

@@ -1,11 +1,11 @@
-import { useUserStore } from "../../../User/UserState";
-import Button from "../button/Button";
+import { useUserStore } from "../../../store/userStore";
 import { UserIcon } from "lucide-react";
+import Button from "../../button/Button";
 
 export function Profile() {
   const { user:{name, email,phone}, setUser } = useUserStore();
   const handleSave = () => {
-    alert("Cambios guardados ✅");
+    alert("Cambios guardados");
     setUser({name, email, phone});
   };
 <div className="flex justify-center"></div>

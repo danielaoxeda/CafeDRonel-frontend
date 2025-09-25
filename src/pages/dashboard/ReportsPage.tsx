@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { Header } from "../../components/dashboard/nav/Header/Header";
-import Tabs from "../../components/dashboard/nav/SalesReports/Tabs";
-import DailyView from "../../components/dashboard/nav/SalesReports/DailyView";
-import WeeklyView from "../../components/dashboard/nav/SalesReports/WeeklyView";
-import MonthlyView from "../../components/dashboard/nav/SalesReports/MonthlyView";
+import { Header } from "../../components/dashboard/header/Header";
+import Tabs from "../../components/dashboard/salesReports/Tabs";
+import DailyView from "../../components/dashboard/salesReports/DailyView";
+import WeeklyView from "../../components/dashboard/salesReports/WeeklyView";
+import MonthlyView from "../../components/dashboard/salesReports/MonthlyView";
 
 export default function ReportsPage() {
   type ViewType = "diario" | "semanal" | "mensual";

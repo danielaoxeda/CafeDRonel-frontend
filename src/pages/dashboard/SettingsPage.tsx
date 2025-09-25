@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { Profile } from "../../components/dashboard/nav/admin-settings/Profile";
-import { Security } from "../../components/dashboard/nav/admin-settings/Security";
-import { Content } from "../../components/dashboard/nav/admin-settings/Content";
-import { Header } from "../../components/dashboard/nav/Header/Header";
-import { Sidebar as SettingsSidebar } from "../../components/Sidebar/SettingsSidebar";
+import { Profile } from "../../components/dashboard/tabsSettings/Profile";
+import { Security } from "../../components/dashboard/tabsSettings/Security";
+import { Content } from "../../components/dashboard/tabsSettings/Content";
+import { Header } from "../../components/dashboard/header/Header";
+import { Sidebar as SettingsSidebar } from "../../components/sidebar/SettingsSidebar";
 
 
 
