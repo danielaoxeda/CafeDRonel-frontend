@@ -1,7 +1,7 @@
 import { CoinsIcon } from "lucide-react";
-import StatCard from "../../nav/Cards/StateCards";
-import LineChartView from "../Charts/LineChartView";
-import BarChartView from "../Charts/BarChartView";
+import StatCard from "../card/StateCards";
+import LineChartView from "../../charts/LineChartView";
+import BarChartView from "../../charts/BarChartView";
 
 // Datos semanales
 const weeklyLineData = [

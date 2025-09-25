@@ -1,7 +1,8 @@
 import Button from "../../components/button/Button.tsx";
-import {ChartCandlestickIcon, CoinsIcon, PackageIcon, PlusIcon, TriangleAlertIcon} from "lucide-react";
-import StatCard from "../../components/card/StatCard.tsx";
+import StatCard from "../../components/card/StateCards.tsx";
 import ProductsTable from "../../components/tables/products/ProductsTable.tsx";
+
+import {ChartCandlestickIcon, CoinsIcon, PackageIcon, PlusIcon, TriangleAlertIcon} from "lucide-react";
 
 export default function ProductsPage() {
     return (

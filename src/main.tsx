@@ -10,12 +10,23 @@ import ReportsPage from "./pages/dashboard/ReportsPage.tsx";
 import SettingsPage from "./pages/dashboard/SettingsPage.tsx";
 import DashboardLayout from "./pages/dashboard/DashboardLayout.tsx";
 import {Toaster} from "sonner";
+import LoginPage from './pages/ecommerce/LoginPage.tsx';
 
 const router = createBrowserRouter([
     {
         path: "/",
         Component: EcommerceHomePage
     },
+    {
+        path: "/auth",
+        children: [
+            {
+                path: "login",
+                Component: LoginPage
+            }
+        ]  
+    },
+
     {
         path: "/dashboard",
         Component: DashboardLayout,

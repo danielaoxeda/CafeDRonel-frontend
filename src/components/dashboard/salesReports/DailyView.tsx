@@ -1,7 +1,7 @@
 import { CoinsIcon } from "lucide-react";
-import StatCard from "../../nav/Cards/StateCards";
-import LineChartView from "../Charts/LineChartView";
-import BarChartView from "../Charts/BarChartView";
+import StatCard from "../card/StateCards";
+import LineChartView from "../../charts/LineChartView";
+import BarChartView from "../../charts/BarChartView";
 
 const dailyLineData = [
         { name: "Lunes", empaque: 120, grano: 150, moka: 90, electrica: 70, prensa: 50 },

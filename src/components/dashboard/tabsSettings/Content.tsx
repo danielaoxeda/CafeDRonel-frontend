@@ -1,6 +1,6 @@
+import Button from "../../button/Button";
 import { useState } from "react";
-import Button from "../button/Button";
-import { UploadCard } from "../card/UploadCard";
+import { UploadCard } from "../../card/UploadCard";
 
 export function Content() {
   const [bannerFile, setBannerFile] = useState<File | null>(null);
