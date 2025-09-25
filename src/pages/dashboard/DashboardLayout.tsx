@@ -1,5 +1,6 @@
 import {Outlet} from "react-router";
-import Sidebar from "../../components/sidebar/GeneralSidebar.tsx";
+import Sidebar from "../../components/Sidebar/GeneralSidebar";
+
 
 export default function DashboardLayout() {
     return (

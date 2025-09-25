@@ -1,5 +1,5 @@
-import { UserAvatar } from "../../user/UserAvatar";
 import { useUserStore } from "../../../store/userStore";
+import { UserAvatar } from "../../User/UserAvatar";
 import { Notifications } from "../notifications/Notifications";
 
 

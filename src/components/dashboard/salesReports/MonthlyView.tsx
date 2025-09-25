@@ -1,7 +1,8 @@
 import { CoinsIcon } from "lucide-react";
-import StatCard from "../card/StateCards";
+
 import LineChartView from "../../charts/LineChartView";
 import BarChartView from "../../charts/BarChartView";
+import StatCard from "../../card/StateCards";
 
 // Datos mensuales
 const monthlyLineData = [

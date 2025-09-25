@@ -3,7 +3,7 @@ import { Profile } from "../../components/dashboard/tabsSettings/Profile";
 import { Security } from "../../components/dashboard/tabsSettings/Security";
 import { Content } from "../../components/dashboard/tabsSettings/Content";
 import { Header } from "../../components/dashboard/header/Header";
-import { Sidebar as SettingsSidebar } from "../../components/sidebar/SettingsSidebar";
+import SettingsSidebar from "../../components/Sidebar/SettingsSidebar";
 
 
 

@@ -49,7 +49,7 @@ export default function Sidebar() {
 
     return (
         <nav
-             className={`${active ? "w-56" : "w-20"} h-screen flex flex-col justify-between bg-primary p-4 transition-all fixed top-0 left-0`}>
+             className={`${active ? "w-56" : "w-20"} h-screen flex flex-col justify-between bg-primary p-4 transition-all sticky top-0 left-0`}>
 
             <div className="pb-10 flex items-center justify-between w-full pt-6 ">
                 {/*Todo: Aquí falta el logo no lo tengo xd*/}

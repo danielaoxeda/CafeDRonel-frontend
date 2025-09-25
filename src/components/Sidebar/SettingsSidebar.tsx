@@ -10,7 +10,7 @@ const tabs = [
   { id: "seguridad", label: "Seguridad", icon: Lock },
 ];
 
-export function Sidebar({ activeTab, setActiveTab }: SidebarSettings) {
+export default function SettingsSidebar({ activeTab, setActiveTab }: SidebarSettings) {
   return (
 
     <div className="w-72 h-90 ml-0 rounded-md bg-white shadow-md p-6">
