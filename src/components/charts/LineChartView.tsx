@@ -19,11 +19,13 @@ export default function LineChartView({ title, data }: Props) {
           <YAxis />
           <Tooltip />
           <Legend />
-          <Line type="monotone" dataKey="empaque" name="Empaque 1/4 kg" stroke="#8884d8" />
-          <Line type="monotone" dataKey="grano" name="Café tostado en grano" stroke="#82ca9d" />
-          <Line type="monotone" dataKey="moka" name="Café molido (moka)" stroke="#ffc658" />
-          <Line type="monotone" dataKey="electrica" name="Café molido (eléctrica)" stroke="#f56969" />
-          <Line type="monotone" dataKey="prensa" name="Café molido (prensa francesa)" stroke="#0088FE" />
+          <Line type="monotone" dataKey="empaque" name="Cafetera Moka" stroke="#8884d8" />
+          <Line type="monotone" dataKey="empaque" name="Cafetera Eléctrica" stroke="#c5a662ff" />
+          <Line type="monotone" dataKey="empaque" name="Prensa Francesa" stroke="#d884b8ff" />
+          <Line type="monotone" dataKey="grano" name="Café tostado en grano 1/4 kg" stroke="#82ca9d" />
+          <Line type="monotone" dataKey="moka" name="Café molido (moka) 1/4 kg" stroke="#ffc658" />
+          <Line type="monotone" dataKey="electrica" name="Café molido (eléctrica) 1/4 kg" stroke="#f56969" />
+          <Line type="monotone" dataKey="prensa" name="Café molido (prensa francesa) 1/4 kg" stroke="#0088FE" />
         </LineChart>
       </ResponsiveContainer>
     </div>

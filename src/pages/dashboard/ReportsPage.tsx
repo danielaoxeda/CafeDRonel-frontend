@@ -10,16 +10,18 @@ export default function ReportsPage() {
   const [activeView, setActiveView] = useState<ViewType>("diario");
 
   return (
-    <div className="min-h-screen px-25 flex-1 pl-72">
-      <Header />
+    <div className="min-h-screen flex-1 px-20 py-10 flex justify-center items-center">
+      <div className="flex-1 flex flex-col gap-4 mb-10">
+        <Header />
 
-      {/* Tabs */}
-      <Tabs activeView={activeView} setActiveView={setActiveView} />
+        {/* Tabs */}
+        <Tabs activeView={activeView} setActiveView={setActiveView} />
 
-      {/* Vistas dinámicas */}
-      {activeView === "diario" && <DailyView />}
-      {activeView === "semanal" && <WeeklyView />}
-      {activeView === "mensual" && <MonthlyView />}
+        {/* Vistas dinámicas */}
+        {activeView === "diario" && <DailyView />}
+        {activeView === "semanal" && <WeeklyView />}
+        {activeView === "mensual" && <MonthlyView />}
+      </div>
     </div>
   );
 }

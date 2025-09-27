@@ -28,7 +28,7 @@ export default function Button({onClick, className, children, type, variant = "p
         <button
             onClick={onClick}
             type={type}
-            className={`${colorVariant} px-4 py-2 cursor-pointer rounded-lg font-bold flex gap-4 items-center justify-center ${className} hover:opacity-70 transition-all`}>
+            className={`${colorVariant} px-2 py-2 cursor-pointer rounded-lg font-bold flex gap-4 items-center justify-center ${className} hover:opacity-70 transition-all`}>
             {children}
         </button>
     );

@@ -2,6 +2,7 @@ import {useState} from "react";
 import type {TableColumn} from "react-data-table-component";
 import DataTable from "react-data-table-component";
 import Button from "../../button/Button.tsx";
+import { PencilIcon, TrashIcon } from "lucide-react";
 
 interface ProductsDataRow {
     id: number;
@@ -64,56 +65,61 @@ export default function ProductsTable() {
             name: "ID",
             selector: (row) => row.id,
             sortable: true,
+            center: true
         },
         {
             name: "Nombre",
             selector: (row) => row.name,
             sortable: true,
+            center: true
         },
         {
             name: "Categoría",
             selector: (row) => row.category,
             sortable: true,
+            center: true
         },
         {
             name: "Subtipo",
             selector: (row) => row.subCategory,
             sortable: true,
+            center: true
         },
         {
             name: "Precio",
             selector: (row) => row.price,
             cell: (row) => `S/. ${row.price}`,
             sortable: true,
-            right: true,
+            center: true
         },
         {
             name: "Stock",
             selector: (row) => row.stock,
             cell: (row) => `${row.stock} unidades`,
             sortable: true,
-            right: true,
+            center: true,
         },
         {
             name: "Estado",
             selector: (row) => row.active,
             cell: (row) => (row.active ? "Activo" : "Inactivo"),
             sortable: true,
+            center: true
         },
         {
             name: "Acciones",
             cell: (row) => (
                 <div className="flex gap-2">
                     <Button variant="warning" className="py-1 px-2" onClick={() => handleEdit(row)}>
-                        Editar
+                        <PencilIcon />
                     </Button>
                     <Button variant="danger" className="py-1 px-2" onClick={() => handleDelete(row)}>
-                        Eliminar
+                        <TrashIcon />
                     </Button>
                 </div>
             ),
             sortable: false,
-            right: true,
+            center: true,
         },
     ];
 
