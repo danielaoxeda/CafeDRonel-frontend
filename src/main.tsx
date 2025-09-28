@@ -1,7 +1,7 @@
-import {StrictMode} from 'react'
-import {createRoot} from 'react-dom/client'
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
 import './index.css'
-import {createBrowserRouter, RouterProvider} from "react-router";
+import { createBrowserRouter, RouterProvider } from "react-router";
 import EcommerceHomePage from "./pages/ecommerce/HomePage.tsx";
 import DashboardHomePage from "./pages/dashboard/HomePage.tsx";
 import ProductsPage from "./pages/dashboard/ProductsPage.tsx";
@@ -9,8 +9,10 @@ import ClientsPage from "./pages/dashboard/ClientsPage.tsx";
 import ReportsPage from "./pages/dashboard/ReportsPage.tsx";
 import SettingsPage from "./pages/dashboard/SettingsPage.tsx";
 import DashboardLayout from "./pages/dashboard/DashboardLayout.tsx";
-import {Toaster} from "sonner";
+import { Toaster } from "sonner";
 import LoginPage from './pages/ecommerce/LoginPage.tsx';
+import ProductsClientPage from './pages/ecommerce/ProductsClientPage.tsx';
+
 
 const router = createBrowserRouter([
     {
@@ -23,8 +25,12 @@ const router = createBrowserRouter([
             {
                 path: "login",
                 Component: LoginPage
+            },
+            {
+                path: "catalogo",
+                Component: ProductsClientPage
             }
-        ]  
+        ]
     },
 
     {
@@ -57,7 +63,7 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')!).render(
     <StrictMode>
-        <Toaster richColors position="bottom-right"/>
-        <RouterProvider router={router}/>
+        <Toaster richColors position="bottom-right" />
+        <RouterProvider router={router} />
     </StrictMode>,
 )
