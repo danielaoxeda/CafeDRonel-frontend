@@ -24,7 +24,7 @@ export default function Navbar() {
                         </nav>
 
                         {/* Icono de perfil */}
-                        <a href="/login">
+                        <a href="/auth/login">
                             <img
                                 src="/img/Catalogo/NavBar_perfil.png"
                                 alt="Usuario"
