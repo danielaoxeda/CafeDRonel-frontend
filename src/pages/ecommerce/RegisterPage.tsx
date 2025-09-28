@@ -1,7 +1,7 @@
 import { MapPinIcon } from 'lucide-react'
-import LoginForm from '../../components/forms/LoginForm'
+import RegisterForm from '../../components/forms/RegisterForm.tsx'
 
-export default function LoginPage() {
+export default function RegisterPage() {
     return (
         <div className="h-screen w-screen bg-gradient-to-b from-orange-200 flex justify-center items-center py-8 md:py-12 lg:py-16 relative overflow-hidden">
             <img
@@ -35,7 +35,7 @@ export default function LoginPage() {
                             </div>
 
                             <div className="w-full">
-                                <LoginForm />
+                                <RegisterForm />
                             </div>
                         </div>
 
