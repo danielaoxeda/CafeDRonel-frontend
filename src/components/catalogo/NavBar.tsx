@@ -6,7 +6,7 @@ export default function Navbar() {
                     {/* Logo a la izquierda */}
                     <a href="#">
                         <img
-                            src="/img/Catalogo/NavBar_Logo_Empresa.jpg"
+                            src="/img/Catalogo/NavBar_Logo_Empresa.png"
                             alt="Café D'Ronel"
                             className="h-10 w-auto"
                         />
