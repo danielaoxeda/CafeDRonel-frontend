@@ -13,6 +13,7 @@ import { Toaster } from "sonner";
 import LoginPage from './pages/ecommerce/LoginPage.tsx';
 import ProductsClientPage from './pages/ecommerce/ProductsClientPage.tsx';
 import RegisterPage from './pages/ecommerce/RegisterPage.tsx';
+import NotFoundPage from "./pages/NotFoundPage.tsx";
 
 const router = createBrowserRouter([
     {
@@ -67,6 +68,10 @@ const router = createBrowserRouter([
                 Component: SettingsPage
             }
         ]
+    },
+    {
+        path: "*",
+        Component: NotFoundPage
     }
 ])
 
