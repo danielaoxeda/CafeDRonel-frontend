@@ -1,4 +1,3 @@
-import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from "react-router";
@@ -13,11 +12,17 @@ import { Toaster } from "sonner";
 import LoginPage from './pages/ecommerce/LoginPage.tsx';
 import ProductsClientPage from './pages/ecommerce/ProductsClientPage.tsx';
 import InicioPage from "./pages/ecommerce/InicioPage.tsx";
+import { StrictMode } from "react";
+
 
 const router = createBrowserRouter([
     {
         path: "/",
         Component: EcommerceHomePage
+    },
+    {
+        path: "Inicio",
+        Component: InicioPage
     },
     {
         path: "/auth",
@@ -30,10 +35,6 @@ const router = createBrowserRouter([
                 path: "catalogo",
                 Component: ProductsClientPage
             },
-            {
-                path: "Inicio",
-                Component: InicioPage
-            }
         ]
     },
 
@@ -63,7 +64,7 @@ const router = createBrowserRouter([
             }
         ]
     },
-])
+]);
 
 createRoot(document.getElementById('root')!).render(
     <StrictMode>
