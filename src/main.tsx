@@ -11,7 +11,6 @@ import DashboardLayout from "./pages/dashboard/DashboardLayout.tsx";
 import { Toaster } from "sonner";
 import LoginPage from './pages/ecommerce/LoginPage.tsx';
 import ProductsClientPage from './pages/ecommerce/ProductsClientPage.tsx';
-import InicioPage from "./pages/ecommerce/InicioPage.tsx";
 import { StrictMode } from "react";
 
 
@@ -19,10 +18,6 @@ const router = createBrowserRouter([
     {
         path: "/",
         Component: EcommerceHomePage
-    },
-    {
-        path: "Inicio",
-        Component: InicioPage
     },
     {
         path: "/auth",
