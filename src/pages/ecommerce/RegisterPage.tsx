@@ -1,4 +1,3 @@
-import { MapPinIcon } from 'lucide-react'
 import RegisterForm from '../../components/forms/RegisterForm.tsx'
 import { useAuthStore } from '../../store/authStore.ts'
 import { useNavigate } from 'react-router'
@@ -49,22 +48,6 @@ export default function RegisterPage() {
                             <div className="w-full">
                                 <RegisterForm />
                             </div>
-                        </div>
-
-                        <div className="bg-orange-200 mt-4 p-4 md:p-5 rounded-lg flex flex-col items-center gap-2">
-                            <h3 className="text-primary font-bold text-sm md:text-base">
-                                Horario de atención
-                            </h3>
-
-                            <div className="flex flex-col items-center text-primary text-xs md:text-sm">
-                                <p>Lunes - Viernes</p>
-                                <p className="flex gap-2">6:00 AM - 9:00 PM</p>
-                            </div>
-
-                            <h3 className="flex items-center text-primary font-bold text-xs md:text-sm">
-                                <MapPinIcon className="h-4 w-4 md:h-5 md:w-5" />
-                                <span className="ml-2">San Martin de Porres, Lima</span>
-                            </h3>
                         </div>
                     </div>
                 </div>

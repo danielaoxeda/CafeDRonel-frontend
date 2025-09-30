@@ -74,12 +74,7 @@ export default function LoginForm() {
                 required
             />
 
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-0 sm:justify-between sm:items-center">
-                <label className="flex gap-2 text-sm sm:text-base">
-                    <input type="checkbox" />
-                    Recordarme
-                </label>
-
+            <div className="flex">
                 <Link
                     to="/auth/forgot-password"
                     className="text-primary hover:underline font-bold text-sm sm:text-base"
