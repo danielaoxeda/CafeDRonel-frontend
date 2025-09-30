@@ -12,6 +12,7 @@ import DashboardLayout from "./pages/dashboard/DashboardLayout.tsx";
 import { Toaster } from "sonner";
 import LoginPage from './pages/ecommerce/LoginPage.tsx';
 import ProductsClientPage from './pages/ecommerce/ProductsClientPage.tsx';
+import RegisterPage from './pages/ecommerce/RegisterPage.tsx';
 
 const router = createBrowserRouter([
     {
@@ -28,47 +29,50 @@ const router = createBrowserRouter([
         ]
     },
     {
-        path: "/auth",
+        path: '/auth',
         children: [
             {
-                path: "login",
+                path: 'login',
                 Component: LoginPage
             },
-
+            {
+                path: 'register',
+                Component: RegisterPage
+            }
         ]
     },
 
     {
-        path: "/dashboard",
+        path: '/dashboard',
         Component: DashboardLayout,
         children: [
             {
-                path: "home",
+                path: 'home',
                 Component: DashboardHomePage
             },
             {
-                path: "products",
+                path: 'products',
                 Component: ProductsPage
             },
             {
-                path: "clients",
+                path: 'clients',
                 Component: ClientsPage
             },
             {
-                path: "reports",
+                path: 'reports',
                 Component: ReportsPage
             },
             {
-                path: "settings",
+                path: 'settings',
                 Component: SettingsPage
             }
         ]
-    },
+    }
 ])
 
 createRoot(document.getElementById('root')!).render(
     <StrictMode>
         <Toaster richColors position="bottom-right" />
         <RouterProvider router={router} />
-    </StrictMode>,
+    </StrictMode>
 )

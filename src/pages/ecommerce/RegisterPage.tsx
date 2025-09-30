@@ -1,10 +1,10 @@
 import { MapPinIcon } from 'lucide-react'
-import LoginForm from '../../components/forms/LoginForm'
+import RegisterForm from '../../components/forms/RegisterForm.tsx'
 import { useAuthStore } from '../../store/authStore.ts'
-import { useEffect } from 'react'
 import { useNavigate } from 'react-router'
+import { useEffect } from 'react'
 
-export default function LoginPage() {
+export default function RegisterPage() {
     const { user } = useAuthStore()
     const navigate = useNavigate()
 
@@ -47,7 +47,7 @@ export default function LoginPage() {
                             </div>
 
                             <div className="w-full">
-                                <LoginForm />
+                                <RegisterForm />
                             </div>
                         </div>
 
