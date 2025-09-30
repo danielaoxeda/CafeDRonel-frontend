@@ -1,24 +1,47 @@
 import Input from '../input/Input.tsx'
-import { Link } from 'react-router'
+import { Link, useNavigate } from 'react-router'
 import Button from '../button/Button.tsx'
-import { useState } from 'react'
+import { type FormEvent, useState } from 'react'
 import type { LoginRequest } from '../../interface/LoginRequest.ts'
 import { login } from '../../services/authServices.ts'
 import { toast } from 'sonner'
+import axios from 'axios'
+import { useAuthStore } from '../../store/authStore.ts'
 
 export default function LoginForm() {
     const [formData, setFormData] = useState<LoginRequest>({
         correo: '',
         contrasena: ''
     })
+    const navigate = useNavigate()
+    const { setUser } = useAuthStore()
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = async (e: FormEvent) => {
         e.preventDefault()
-        const res = await login(formData).catch(error => {
-            toast.error(error.response?.data?.message || 'Error en login')
-        })
-        toast.success('Login exitoso')
-        console.log('JWT: ', (res as any)?.token)
+        try {
+            const res = await login(formData)
+
+            if (res) {
+                console.log(res)
+
+                toast.success('Inicio de sesion exitoso')
+                setUser(res)
+
+                if (res.rol === 'ADMINISTRADOR') {
+                    navigate('/dashboard')
+                } else if (res.rol === 'CLIENTE') {
+                    navigate('/')
+                }
+            }
+        } catch (error) {
+            if (axios.isAxiosError(error)) {
+                const errorMessage = error.response?.data?.message
+                toast.error(errorMessage || 'Error de conexión con el servidor')
+            } else {
+                toast.error('Error inesperado durante el Inicio de sesion')
+                console.error('Error no controlado:', error)
+            }
+        }
     }
 
     return (

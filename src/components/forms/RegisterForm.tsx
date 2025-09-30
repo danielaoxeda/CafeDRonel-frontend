@@ -1,10 +1,11 @@
 import Input from '../input/Input.tsx'
 import Button from '../button/Button.tsx'
-import { useState } from 'react'
+import { type ChangeEvent, type FormEvent, useState } from 'react'
 import type { RegisterRequest } from '../../interface/RegisterRequest.ts'
 import { register } from '../../services/authServices.ts'
 import { toast } from 'sonner'
-import { Link } from 'react-router'
+import { Link, useNavigate } from 'react-router'
+import axios from 'axios'
 
 export default function RegisterForm() {
     const [formData, setFormData] = useState<RegisterRequest>({
@@ -12,25 +13,39 @@ export default function RegisterForm() {
         correo: '',
         contrasena: '',
         telefono: '',
-        direccion: ''
+        direccion: '',
+        rol: 'CLIENTE'
     })
+    const navigate = useNavigate()
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         setFormData(prev => ({
             ...prev,
             [e.target.name]: e.target.value
         }))
     }
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = async (e: FormEvent) => {
         e.preventDefault()
         try {
+            if (!/^\d+$/.test(formData.telefono)) {
+                toast.error('El teléfono debe contener solo números')
+                return
+            }
             const res = await register(formData)
-            alert('Usuario registrado')
-            console.log('Respuesta:', res)
-            // Aquí puedes redirigir al login si quieres
-        } catch (error: any) {
-            toast.error(error.response?.data?.message || 'Error al registrar')
+
+            if (res) {
+                toast.success('Registro exitoso')
+                navigate('/auth/login')
+            }
+        } catch (error) {
+            if (axios.isAxiosError(error)) {
+                const errorMessage = error.response?.data?.message
+                toast.error(errorMessage || 'Error de conexión con el servidor')
+            } else {
+                toast.error('Error inesperado durante el registro')
+                console.error('Error no controlado:', error)
+            }
         }
     }
 
@@ -84,7 +99,7 @@ export default function RegisterForm() {
                 placeholder="Ingresa tu dirección"
             />
 
-            <Button className="w-full">Iniciar sesión</Button>
+            <Button className="w-full">Registrarme</Button>
 
             <div className="flex flex-col sm:flex-row gap-1 sm:gap-2 justify-center items-center text-sm sm:text-base">
                 <h3 className="text-primary">¿Ya tienes una cuenta?</h3>

@@ -1,7 +1,19 @@
 import { MapPinIcon } from 'lucide-react'
 import LoginForm from '../../components/forms/LoginForm'
+import { useAuthStore } from '../../store/authStore.ts'
+import { useEffect } from 'react'
+import { useNavigate } from 'react-router'
 
 export default function LoginPage() {
+    const { user } = useAuthStore()
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        if (user.token !== undefined) {
+            navigate('/')
+        }
+    }, [])
+
     return (
         <div className="h-screen w-screen bg-gradient-to-b from-orange-200 flex justify-center items-center py-8 md:py-12 lg:py-16 relative overflow-hidden">
             <img

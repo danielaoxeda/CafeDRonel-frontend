@@ -1,7 +1,19 @@
 import { MapPinIcon } from 'lucide-react'
 import RegisterForm from '../../components/forms/RegisterForm.tsx'
+import { useAuthStore } from '../../store/authStore.ts'
+import { useNavigate } from 'react-router'
+import { useEffect } from 'react'
 
 export default function RegisterPage() {
+    const { user } = useAuthStore()
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        if (user.token !== undefined) {
+            navigate('/')
+        }
+    }, [])
+
     return (
         <div className="h-screen w-screen bg-gradient-to-b from-orange-200 flex justify-center items-center py-8 md:py-12 lg:py-16 relative overflow-hidden">
             <img
