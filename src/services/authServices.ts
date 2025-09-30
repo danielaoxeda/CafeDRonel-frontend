@@ -2,6 +2,7 @@ import type { LoginRequest } from '../interface/LoginRequest'
 import type { LoginResponse } from '../interface/LoginResponse'
 import type { RegisterRequest } from '../interface/RegisterRequest'
 import API from './api'
+import type VerifyRequest from '../interface/VerifyRequest.ts'
 
 export const login = async (data: LoginRequest): Promise<LoginResponse> => {
     const response = await API.post<LoginResponse>('/auth/login', data)
@@ -11,6 +12,12 @@ export const login = async (data: LoginRequest): Promise<LoginResponse> => {
 
 export const register = async (data: RegisterRequest) => {
     const response = await API.post('/auth/register', data)
+
+    return response.data
+}
+
+export const verify = async (data: VerifyRequest) => {
+    const response = await API.post('/auth/verify', data)
 
     return response.data
 }

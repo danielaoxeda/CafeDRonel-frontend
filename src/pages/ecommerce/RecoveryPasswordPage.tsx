@@ -1,17 +1,10 @@
-import RegisterForm from '../../components/forms/RegisterForm.tsx'
-import { useAuthStore } from '../../store/authStore.ts'
-import { useNavigate } from 'react-router'
-import { useEffect } from 'react'
+import ConfirmEmailForm from '../../components/forms/ConfirmEmailForm.tsx'
+import { useState } from 'react'
+import RecoveryPasswordForm from '../../components/forms/RecoveryPasswordForm.tsx'
 
-export default function RegisterPage() {
-    const { user } = useAuthStore()
-    const navigate = useNavigate()
-
-    useEffect(() => {
-        if (user.token !== undefined) {
-            navigate('/')
-        }
-    }, [])
+export default function RecoveryPasswordPage() {
+    const [step, setStep] = useState<number>(1)
+    const [email, setEmail] = useState<string>('')
 
     return (
         <div className="h-screen w-screen bg-gradient-to-b from-orange-200 flex justify-center items-center py-8 md:py-12 lg:py-16 relative overflow-hidden">
@@ -38,15 +31,18 @@ export default function RegisterPage() {
                         <div className="bg-orange-200 p-4 md:p-5 lg:p-6 rounded-lg flex flex-col items-center gap-4">
                             <div className="text-center">
                                 <h4 className="text-base md:text-lg lg:text-xl font-bold">
-                                    ¡Bienvenido!
+                                    Restablecer credenciales
                                 </h4>
                                 <p className="text-xs md:text-sm lg:text-base">
-                                    Ingresa tus credenciales para crear tu cuenta
+                                    Ingresa tu correo para continuar
                                 </p>
                             </div>
 
                             <div className="w-full">
-                                <RegisterForm />
+                                {step === 1 && (
+                                    <ConfirmEmailForm setStep={setStep} setEmail={setEmail} />
+                                )}
+                                {step === 2 && <RecoveryPasswordForm email={email} />}
                             </div>
                         </div>
                     </div>
