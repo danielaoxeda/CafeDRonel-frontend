@@ -16,8 +16,8 @@ export default function Navbar() {
                     <div className="flex items-center gap-8">
                         <nav aria-label="Global">
                             <ul className="flex items-center gap-6 text-sm font-semibold text-[#F5EBDD]">
-                                <li><a href="#" className="hover:text-[#E8C28C] transition">INICIO</a></li>
-                                <li><a href="#" className="hover:text-[#E8C28C] transition">PRODUCTOS</a></li>
+                                <li><a href="/auth/Inicio" className="hover:text-[#E8C28C] transition">INICIO</a></li>
+                                <li><a href="/auth/Catalogo" className="hover:text-[#E8C28C] transition">PRODUCTOS</a></li>
                                 <li><a href="#" className="hover:text-[#E8C28C] transition">NOSOTROS</a></li>
                                 <li><a href="#" className="hover:text-[#E8C28C] transition">CONTACTO</a></li>
                             </ul>

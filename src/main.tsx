@@ -12,7 +12,7 @@ import DashboardLayout from "./pages/dashboard/DashboardLayout.tsx";
 import { Toaster } from "sonner";
 import LoginPage from './pages/ecommerce/LoginPage.tsx';
 import ProductsClientPage from './pages/ecommerce/ProductsClientPage.tsx';
-
+import InicioPage from "./pages/ecommerce/InicioPage.tsx";
 
 const router = createBrowserRouter([
     {
@@ -29,6 +29,10 @@ const router = createBrowserRouter([
             {
                 path: "catalogo",
                 Component: ProductsClientPage
+            },
+            {
+                path: "Inicio",
+                Component: InicioPage
             }
         ]
     },
