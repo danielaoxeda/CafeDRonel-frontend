@@ -11,28 +11,32 @@ const semillasOrganicas = [
         name: "Café molido grueso",
         subtitle: "250 g – Ideal para prensa francesa",
         description: "Molienda gruesa que conserva los aceites naturales del café.",
-        image: "/img/Catalogo/ProductCard_cafe.png"
+        image: "/img/Catalogo/ProductCard_cafe.png",
+        price: 19.50
     },
     {
         id: "2",
         name: "Café molido fino",
         subtitle: "250 g – Ideal para cafetera Moka",
         description: "Molienda fina para extracción intensa y aromática.",
-        image: "/img/Catalogo/ProductCard_cafe.png"
+        image: "/img/Catalogo/ProductCard_cafe.png",
+        price: 25.50
     },
     {
         id: "3",
         name: "Café molido medio",
         subtitle: "250 g – Ideal para Moka Italiana",
         description: "Molienda media para extracción equilibrada y cuerpo suave.",
-        image: "/img/Catalogo/ProductCard_cafe.png"
+        image: "/img/Catalogo/ProductCard_cafe.png",
+        price: 20.50
     },
     {
         id: "4",
         name: "Café grano tostado",
         subtitle: "250 g – Para moler en casa",
         description: "Granos enteros para disfrutar de la frescura y aroma al instante.",
-        image: "/img/Catalogo/ProductCard_cafe.png"
+        image: "/img/Catalogo/ProductCard_cafe.png",
+        price: 22.50
     }
 ]
 
@@ -42,14 +46,16 @@ const cafeteras = [
         name: "Prensa Francesa",
         subtitle: "Método europeo – Extracción intensa",
         description: "Ideal para café molido grueso. Conserva aceites naturales y sabores profundos.",
-        image: "/img/Catalogo/ProductCard_cafetera.png"
+        image: "/img/Catalogo/ProductCard_cafetera.png",
+        price: 68.50
     },
     {
         id: "6",
         name: "Moka Italiana",
         subtitle: "Método tradicional – Café concentrado",
         description: "Ideal para molienda media o fina. Produce café estilo espresso con cuerpo intenso.",
-        image: "/img/Catalogo/ProductCard_cafetera.png"
+        image: "/img/Catalogo/ProductCard_cafetera.png",
+        price: 70.50
     }
 ]
 

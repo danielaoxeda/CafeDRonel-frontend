@@ -1,12 +1,5 @@
 import ProductCard from "./ProductCard"
-
-interface Product {
-    id: string
-    name: string
-    subtitle: string
-    description: string
-    image: string
-}
+import type { Product } from '../../store/cartStore'
 
 interface ProductListProps {
     products: Product[]
