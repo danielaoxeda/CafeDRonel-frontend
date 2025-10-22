@@ -15,6 +15,7 @@ import ProductsClientPage from './pages/ecommerce/ProductsClientPage.tsx';
 import RegisterPage from './pages/ecommerce/RegisterPage.tsx';
 import RecoveryPasswordPage from './pages/ecommerce/RecoveryPasswordPage.tsx';
 import NotFoundPage from "./pages/NotFoundPage.tsx";
+import AusPage from './pages/ecommerce/AusPage.tsx';
 
 const router = createBrowserRouter([
     {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
             {
                 path: 'catalogo',
                 Component: ProductsClientPage
+            },
+                        {
+                path: 'nosotros',
+                Component: AusPage
             }
         ]
     },

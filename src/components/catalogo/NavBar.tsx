@@ -32,7 +32,7 @@ export default function Navbar() {
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" className="hover:text-[#E8C28C] transition">
+                                    <a href="/nosotros" className="hover:text-[#E8C28C] transition">
                                         NOSOTROS
                                     </a>
                                 </li>
