@@ -1,5 +1,7 @@
 import { useAuthStore } from '../../store/authStore.ts'
 import { LogOutIcon } from 'lucide-react'
+import CartIcon from './CartIcon'
+
 
 export default function Navbar() {
     const { user, logout } = useAuthStore()
@@ -43,7 +45,7 @@ export default function Navbar() {
                                 </li>
                             </ul>
                         </nav>
-
+                        <CartIcon />
                         {/* Icono de perfil */}
                         {user.token === undefined ? (
                             <a href="/auth/login">

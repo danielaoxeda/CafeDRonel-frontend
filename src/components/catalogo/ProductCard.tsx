@@ -1,10 +1,5 @@
-interface Product {
-    id: string
-    name: string
-    subtitle: string
-    description: string
-    image: string
-}
+import AddToCartControls from './AddToCartControls'
+import type { Product } from '../../store/cartStore'
 
 export default function ProductCard({ product }: { product: Product }) {
     return (
@@ -23,6 +18,8 @@ export default function ProductCard({ product }: { product: Product }) {
                 <h2 className="text-lg font-bold text-[#5C3A21]">{product.name}</h2>
                 <p className="text-sm text-[#7A4B2A] mt-1">{product.subtitle}</p>
                 <p className="text-[#5C3A21] mt-2">{product.description}</p>
+                <p className="text-[#5C3A21] font-semibold mt-2">S/. {product.price.toFixed(2)}</p>
+                <AddToCartControls product={product} />
             </div>
         </div>
     )

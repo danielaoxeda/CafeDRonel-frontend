@@ -16,6 +16,8 @@ import RegisterPage from './pages/ecommerce/RegisterPage.tsx';
 import RecoveryPasswordPage from './pages/ecommerce/RecoveryPasswordPage.tsx';
 import NotFoundPage from "./pages/NotFoundPage.tsx";
 import AusPage from './pages/ecommerce/AusPage.tsx';
+import CartPage from './pages/ecommerce/CartPage.tsx'
+
 
 const router = createBrowserRouter([
     {
@@ -28,6 +30,10 @@ const router = createBrowserRouter([
             {
                 path: 'catalogo',
                 Component: ProductsClientPage
+            },
+            { 
+                path: 'carrito', 
+                Component: CartPage 
             },
                         {
                 path: 'nosotros',
