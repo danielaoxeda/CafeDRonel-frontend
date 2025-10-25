@@ -4,13 +4,12 @@ import DataTable from "react-data-table-component";
 import Button from "../../button/Button.tsx";
 import { PencilIcon, TrashIcon } from "lucide-react";
 
-interface ProductsDataRow {
+interface ClientsDataRow {
     id: number;
     name: string;
-    category: string;
-    subCategory: string;
-    price: number;
-    stock: number;
+    lastName: string;
+    email: string;
+    phone: string;
     active: boolean;
 }
 
@@ -33,53 +32,51 @@ const customStyles = {
   },
 };
 
-const data: ProductsDataRow[] = [
+
+const data: ClientsDataRow[] = [
     {
         id: 1,
-        name: "Empaque 1",
-        category: "Categoria 1",
-        subCategory: "Subcategoria 1",
-        price: 17,
-        stock: 10,
+        name: "Claudia",
+        lastName: "Villalta",
+        email: "claudiav@gmail.com",
+        phone: "987234112",
         active: true,
     },
     {
         id: 2,
-        name: "Empaque 2",
-        category: "Categoria 2",
-        subCategory: "Subcategoria 2",
-        price: 15,
-        stock: 5,
-        active: false,
+        name: "Marco",
+        lastName: "Del Castillo",
+        email: "mDelCastillo@gmail.com",
+        phone: "900138873",
+        active: true,
     },
     {
         id: 3,
-        name: "Empaque 3",
-        category: "Categoria 3",
-        subCategory: "Subcategoria 3",
-        price: 10,
-        stock: 15,
+        name: "Mariana",
+        lastName: "Flores",
+        email: "mariflores@gmail.com",
+        phone: "913792010",
         active: true,
     },
 ];
 
-export default function ProductsTable() {
+export default function ClientsTable() {
     const [isEditModalOpen, setIsEditModalOpen] = useState(false);
-    const [selectedProduct, setSelectedProduct] = useState<ProductsDataRow | null>(null);
+    const [selectedProduct, setSelectedProduct] = useState<ClientsDataRow | null>(null);
 
-    const handleEdit = (row: ProductsDataRow) => {
+    const handleEdit = (row: ClientsDataRow) => {
         setSelectedProduct(row);
         setIsEditModalOpen(true);
     };
 
-    const handleDelete = (row: ProductsDataRow) => {
+    const handleDelete = (row: ClientsDataRow) => {
         if (window.confirm(`¿Estás seguro que deseas eliminar el producto "${row.name}"?`)) {
             // TODO: Implementar la lógica de eliminación
             console.log("Eliminando producto:", row);
         }
     };
 
-    const columns: TableColumn<ProductsDataRow>[] = [
+    const columns: TableColumn<ClientsDataRow>[] = [
         {
             name: "ID",
             selector: (row) => row.id,
@@ -93,35 +90,20 @@ export default function ProductsTable() {
             center: true
         },
         {
-            name: "Categoría",
-            selector: (row) => row.category,
+            name: "Apellido",
+            selector: (row) => row.lastName,
             sortable: true,
             center: true
         },
         {
-            name: "Subtipo",
-            selector: (row) => row.subCategory,
+            name: "Email",
+            selector: (row) => row.email,
             sortable: true,
             center: true
         },
         {
-            name: "Precio",
-            selector: (row) => row.price,
-            cell: (row) => `S/. ${row.price}`,
-            sortable: true,
-            center: true
-        },
-        {
-            name: "Stock",
-            selector: (row) => row.stock,
-            cell: (row) => `${row.stock} unidades`,
-            sortable: true,
-            center: true,
-        },
-        {
-            name: "Estado",
-            selector: (row) => row.active,
-            cell: (row) => (row.active ? "Activo" : "Inactivo"),
+            name: "Celular",
+            selector: (row) => row.phone,
             sortable: true,
             center: true
         },
@@ -148,14 +130,14 @@ export default function ProductsTable() {
                 columns={columns}
                 data={data}
                 customStyles={customStyles}
-                noDataComponent={"Aun no tienes productos publicados"}
+                noDataComponent={"Aún no tienes clientes registrados"}
                 pagination
             />
 
             {isEditModalOpen && selectedProduct && (
                 <div className="fixed inset-0 bg-black/30 backdrop-blur-2xl flex items-center justify-center">
                     <div className="bg-white p-6 rounded-lg w-96">
-                        <h2 className="text-xl font-bold mb-4">Editar Producto</h2>
+                        <h2 className="text-xl font-bold mb-4">Editar Cliente</h2>
                         {/* TODO: Agregar formulario de edición */}
                         <div className="flex justify-end gap-2 mt-4">
                             <Button variant="secondary" onClick={() => setIsEditModalOpen(false)}>
@@ -176,4 +158,7 @@ export default function ProductsTable() {
             )}
         </div>
     );
+    
 }
+
+

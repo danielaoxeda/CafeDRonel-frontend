@@ -9,9 +9,11 @@ export default function SettingsPage() {
     const [activeTab, setActiveTab] = useState('perfil')
 
     return (
-        <div className="min-h-screen px-25 flex-1">
-            {/* Header global */}
-            <Header />
+            <div className="flex flex-col flex-1 p-10">
+            <div className="flex justify-between items-center h-10">
+                    <h2 className="text-3xl font-bold">Configuración</h2>
+                    <Header />
+            </div>
             <div className="flex justify-center mt-10">
                 {/* Contenedor principal */}
                 <div className="flex px-10 bg-gray-50 py-6 rounded-lg max-w-fit">

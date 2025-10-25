@@ -7,8 +7,7 @@ export function Header() {
 
     return (
         <div className="flex justify-between items-center mb-10 px-0 pt-8">
-            <h1 className="text-2xl font-bold">Reportes de Venta</h1>
-            <div className="flex items-center gap-4 mr-8">
+            <div className="flex items-center gap-4">
                 <Notifications />
                 <UserAvatar name={user.name} size={30} />
             </div>
