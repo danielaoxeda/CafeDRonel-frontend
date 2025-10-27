@@ -2,7 +2,7 @@ import HeroSection from "../../components/catalogo/HeroSection"
 import ProductList from "../../components/catalogo/ProductList"
 import SectionDivider from "../../components/catalogo/SectionDivider"
 import Footer from "../../components/catalogo/Footer"
-
+import Navbar from "../../components/catalogo/NavBar";
 
 
 const semillasOrganicas = [
@@ -62,6 +62,7 @@ const cafeteras = [
 export default function ProductsClientPage() {
     return (
         <div className="bg-[#F5EBDD]">
+            <Navbar />
             <HeroSection
                 image="/img/Catalogo/HeroSection_fondo.png"
                 title="PRODUCTOS"

@@ -4,6 +4,7 @@ import SectionDivider from "../../components/catalogo/SectionDivider.tsx";
 import Products from "../../components/inicio/Products.tsx";
 import Promotions from "../../components/inicio/Promocion.tsx";
 import Footer from "../../components/catalogo/Footer.tsx";
+import Navbar from "../../components/catalogo/NavBar.tsx";
 
 export default function HomePage() {
     const navigate = useNavigate();
@@ -14,6 +15,7 @@ export default function HomePage() {
 
     return (
         <div className="bg-[#F5EBDD]">
+            <Navbar />
             <div className="relative">
                 <HeroSection
                     image="/img/Inicio/cafes.png"
