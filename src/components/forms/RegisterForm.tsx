@@ -10,6 +10,7 @@ import axios from 'axios'
 export default function RegisterForm() {
     const [formData, setFormData] = useState<RegisterRequest>({
         nombre: '',
+        apellido: '',
         correo: '',
         contrasena: '',
         telefono: '',
@@ -62,6 +63,16 @@ export default function RegisterForm() {
             />
 
             <Input
+                label="Apellido"
+                name="apellido"
+                type="text"
+                value={formData.apellido}
+                onChange={handleChange}
+                placeholder="Ingresa tu apellido"
+                required
+            />
+
+            <Input
                 label="Correo"
                 name="correo"
                 type="email"
@@ -104,7 +115,7 @@ export default function RegisterForm() {
             <div className="flex flex-col sm:flex-row gap-1 sm:gap-2 justify-center items-center text-sm sm:text-base">
                 <h3 className="text-primary">¿Ya tienes una cuenta?</h3>
                 <Link to="/auth/login" className="text-primary font-bold hover:underline">
-                    Inicia Sesion aqui
+                    Inicia Sesión aquí
                 </Link>
             </div>
         </form>
