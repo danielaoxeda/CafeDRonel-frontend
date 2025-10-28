@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Button from "../../button/Button";
+import Button from "../../button/GeneralButton";
 
 export function Security() {
   const [currentPassword, setCurrentPassword] = useState("");

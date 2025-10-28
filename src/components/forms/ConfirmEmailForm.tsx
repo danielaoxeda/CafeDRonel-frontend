@@ -1,5 +1,5 @@
 import Input from '../input/Input.tsx'
-import Button from '../button/Button.tsx'
+import Button from '../button/GeneralButton.tsx'
 import { type FormEvent, useState } from 'react'
 import { Link } from 'react-router'
 import { toast } from 'sonner'

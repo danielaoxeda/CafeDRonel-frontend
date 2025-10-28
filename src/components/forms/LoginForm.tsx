@@ -1,6 +1,6 @@
 import Input from '../input/Input.tsx'
 import { Link, useNavigate } from 'react-router'
-import Button from '../button/Button.tsx'
+import Button from '../button/GeneralButton.tsx'
 import { type FormEvent, useState } from 'react'
 import type { LoginRequest } from '../../interface/LoginRequest.ts'
 import { login } from '../../services/authServices.ts'

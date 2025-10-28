@@ -1,7 +1,7 @@
 import {useState} from "react";
 import type {TableColumn} from "react-data-table-component";
 import DataTable from "react-data-table-component";
-import Button from "../../button/Button.tsx";
+import Button from "../../button/GeneralButton.tsx";
 import { PencilIcon, TrashIcon } from "lucide-react";
 
 interface ClientsDataRow {

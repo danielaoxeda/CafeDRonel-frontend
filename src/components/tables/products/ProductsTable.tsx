@@ -1,179 +1,70 @@
-import {useState} from "react";
-import type {TableColumn} from "react-data-table-component";
+import { useState} from "react";
+import type { TableColumn } from "react-data-table-component";
 import DataTable from "react-data-table-component";
-import Button from "../../button/Button.tsx";
+import Button from "../../button/GeneralButton.tsx";
 import { PencilIcon, TrashIcon } from "lucide-react";
+import type ProductsResponse from "../../../interface/ProductsResponse.ts";
+import { EditProductModal } from "../../modal/EditProductModal.tsx";
+import { DeleteProductModal } from "../../modal/DeleteProductModal.tsx";
 
-interface ProductsDataRow {
-    id: number;
-    name: string;
-    category: string;
-    subCategory: string;
-    price: number;
-    stock: number;
-    active: boolean;
+interface ProductsTableProps {
+  products: ProductsResponse[];
+  onRefresh: () => void;
 }
 
-const customStyles = {
-  headCells: {
-    style: {
-      fontSize: "16px", 
-      fontWeight: "600",
-    },
-  },
-  cells: {
-    style: {
-      fontSize: "16px", 
-    },
-  },
-  rows: {
-    style: {
-      minHeight: "60px", 
-    },
-  },
-};
+export default function ProductsTable({ products, onRefresh }: ProductsTableProps) {
+  const [selectedProduct, setSelectedProduct] = useState<ProductsResponse | null>(null);
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
 
-const data: ProductsDataRow[] = [
+  const columns: TableColumn<ProductsResponse>[] = [
+    { name: "ID", selector: (row) => row.idProducto, sortable: true, center: true },
+    { name: "Nombre", selector: (row) => row.nombre, sortable: true, center: true },
+    { name: "Categoría", selector: (row) => row.categoria, sortable: true, center: true },
+    { name: "Subtipo", selector: (row) => row.subtipo, sortable: true, center: true },
+    { name: "Precio", cell: (row) => `S/. ${row.precio}`, sortable: true, center: true },
+    { name: "Stock", selector: (row) => row.stock, cell: (row) => `${row.stock} u`, center: true },
+    { name: "Estado", cell: (row) => (row.activo ? "Activo" : "Inactivo"), center: true },
     {
-        id: 1,
-        name: "Empaque 1",
-        category: "Categoria 1",
-        subCategory: "Subcategoria 1",
-        price: 17,
-        stock: 10,
-        active: true,
-    },
-    {
-        id: 2,
-        name: "Empaque 2",
-        category: "Categoria 2",
-        subCategory: "Subcategoria 2",
-        price: 15,
-        stock: 5,
-        active: false,
-    },
-    {
-        id: 3,
-        name: "Empaque 3",
-        category: "Categoria 3",
-        subCategory: "Subcategoria 3",
-        price: 10,
-        stock: 15,
-        active: true,
-    },
-];
-
-export default function ProductsTable() {
-    const [isEditModalOpen, setIsEditModalOpen] = useState(false);
-    const [selectedProduct, setSelectedProduct] = useState<ProductsDataRow | null>(null);
-
-    const handleEdit = (row: ProductsDataRow) => {
-        setSelectedProduct(row);
-        setIsEditModalOpen(true);
-    };
-
-    const handleDelete = (row: ProductsDataRow) => {
-        if (window.confirm(`¿Estás seguro que deseas eliminar el producto "${row.name}"?`)) {
-            // TODO: Implementar la lógica de eliminación
-            console.log("Eliminando producto:", row);
-        }
-    };
-
-    const columns: TableColumn<ProductsDataRow>[] = [
-        {
-            name: "ID",
-            selector: (row) => row.id,
-            sortable: true,
-            center: true
-        },
-        {
-            name: "Nombre",
-            selector: (row) => row.name,
-            sortable: true,
-            center: true
-        },
-        {
-            name: "Categoría",
-            selector: (row) => row.category,
-            sortable: true,
-            center: true
-        },
-        {
-            name: "Subtipo",
-            selector: (row) => row.subCategory,
-            sortable: true,
-            center: true
-        },
-        {
-            name: "Precio",
-            selector: (row) => row.price,
-            cell: (row) => `S/. ${row.price}`,
-            sortable: true,
-            center: true
-        },
-        {
-            name: "Stock",
-            selector: (row) => row.stock,
-            cell: (row) => `${row.stock} unidades`,
-            sortable: true,
-            center: true,
-        },
-        {
-            name: "Estado",
-            selector: (row) => row.active,
-            cell: (row) => (row.active ? "Activo" : "Inactivo"),
-            sortable: true,
-            center: true
-        },
-        {
-            name: "Acciones",
-            cell: (row) => (
-                <div className="flex gap-2">
-                    <Button variant="warning" className="py-1 px-2" onClick={() => handleEdit(row)}>
-                        <PencilIcon />
-                    </Button>
-                    <Button variant="danger" className="py-1 px-2" onClick={() => handleDelete(row)}>
-                        <TrashIcon />
-                    </Button>
-                </div>
-            ),
-            sortable: false,
-            center: true,
-        },
-    ];
-
-    return (
-        <div className="border rounded-lg overflow-hidden border-gray-200">
-            <DataTable
-                columns={columns}
-                data={data}
-                customStyles={customStyles}
-                noDataComponent={"Aun no tienes productos publicados"}
-                pagination
-            />
-
-            {isEditModalOpen && selectedProduct && (
-                <div className="fixed inset-0 bg-black/30 backdrop-blur-2xl flex items-center justify-center">
-                    <div className="bg-white p-6 rounded-lg w-96">
-                        <h2 className="text-xl font-bold mb-4">Editar Producto</h2>
-                        {/* TODO: Agregar formulario de edición */}
-                        <div className="flex justify-end gap-2 mt-4">
-                            <Button variant="secondary" onClick={() => setIsEditModalOpen(false)}>
-                                Cancelar
-                            </Button>
-                            <Button
-                                variant="primary"
-                                onClick={() => {
-                                    // TODO: Implementar lógica de guardado
-                                    setIsEditModalOpen(false);
-                                }}
-                            >
-                                Guardar
-                            </Button>
-                        </div>
-                    </div>
-                </div>
-            )}
+      name: "Acciones",
+      cell: (row) => (
+        <div className="flex gap-2">
+          <Button variant="warning" className="py-1 px-2" onClick={() => { setSelectedProduct(row); setIsEditModalOpen(true); }}>
+            <PencilIcon />
+          </Button>
+          <Button variant="danger" className="py-1 px-2" onClick={() => { setSelectedProduct(row); setIsDeleteModalOpen(true); }}>
+            <TrashIcon />
+          </Button>
         </div>
-    );
+      ),
+      center: true,
+    },
+  ];
+
+  return (
+    <div className="border rounded-lg overflow-hidden border-gray-200">
+      <DataTable
+        columns={columns}
+        data={products}
+        noDataComponent={"Aún no tienes productos registrados"}
+        pagination
+      />
+
+      {isEditModalOpen && selectedProduct && (
+        <EditProductModal
+          product={selectedProduct}
+          onClose={() => setIsEditModalOpen(false)}
+          onRefresh={onRefresh}
+        />
+      )}
+
+      {isDeleteModalOpen && selectedProduct && (
+        <DeleteProductModal
+          product={selectedProduct}
+          onClose={() => setIsDeleteModalOpen(false)}
+          onRefresh={onRefresh}
+        />
+      )}
+    </div>
+  );
 }

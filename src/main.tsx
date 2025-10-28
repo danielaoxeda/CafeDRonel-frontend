@@ -1,7 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import { createBrowserRouter, RouterProvider } from "react-router";
+import { createBrowserRouter, Navigate, RouterProvider } from "react-router";
 import EcommerceHomePage from "./pages/ecommerce/HomePage.tsx";
 import DashboardHomePage from "./pages/dashboard/HomePage.tsx";
 import ProductsPage from "./pages/dashboard/ProductsPage.tsx";
@@ -31,11 +31,11 @@ const router = createBrowserRouter([
                 path: 'catalogo',
                 Component: ProductsClientPage
             },
-            { 
-                path: 'carrito', 
-                Component: CartPage 
+            {
+                path: 'carrito',
+                Component: CartPage
             },
-                        {
+            {
                 path: 'nosotros',
                 Component: AusPage
             }
@@ -63,6 +63,10 @@ const router = createBrowserRouter([
         path: '/dashboard',
         Component: DashboardLayout,
         children: [
+            {
+                index: true,
+                element: <Navigate to="home" replace />
+            },
             {
                 path: 'home',
                 Component: DashboardHomePage

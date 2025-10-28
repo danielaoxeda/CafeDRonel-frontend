@@ -1,6 +1,6 @@
 import { useUserStore } from "../../../store/userStore";
 import { UserIcon } from "lucide-react";
-import Button from "../../button/Button";
+import Button from "../../button/GeneralButton";
 
 export function Profile() {
   const { user:{name, email,phone}, setUser } = useUserStore();
