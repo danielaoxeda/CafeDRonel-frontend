@@ -39,7 +39,7 @@ export const createClient = async (newProduct: Omit<ClientsResponse, 'idClientes
 // Actualizar un cliente existente - PUT /clientes/{id}
 export const updateClient = async (id: number, updatedData: Partial<ClientsResponse>) : Promise<ClientsResponse | null> => {
     try {   
-        const response = await API.put(`/clients/${id}`, updatedData);
+        const response = await API.put(`/clientes/${id}`, updatedData);
         return response.data as ClientsResponse;
     } catch (error) {
         console.error("Error updating client:", error);
