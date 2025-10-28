@@ -23,9 +23,15 @@ export default function LoginForm() {
 
             if (res) {
                 console.log(res)
-
+                /** Se modifico setUser */
                 toast.success('Inicio de sesion exitoso')
-                setUser(res)
+                setUser({
+                    id: res.id,
+                    email: res.email,
+                    token: res.token,
+                    rol: res.rol
+                })
+
 
                 if (res.rol === 'ADMINISTRADOR') {
                     navigate('/dashboard')

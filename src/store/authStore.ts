@@ -1,10 +1,13 @@
 import { create } from 'zustand/react'
 import { persist } from 'zustand/middleware'
+
 type AuthData = {
-    email: undefined | string
-    token: undefined | string
-    rol: undefined | string
+    id: number | undefined
+    email: string | undefined
+    token: string | undefined
+    rol: string | undefined
 }
+
 
 type userStore = {
     user: AuthData
@@ -15,9 +18,9 @@ type userStore = {
 export const useAuthStore = create(
     persist<userStore>(
         set => ({
-            user: { email: undefined, token: undefined, rol: undefined },
+            user: { id: undefined, email: undefined, token: undefined, rol: undefined },
             setUser: user => set(prevState => ({ user: { ...prevState.user, ...user } })),
-            logout: () => set({ user: { email: undefined, token: undefined, rol: undefined } })
+            logout: () => set({ user: { id: undefined, email: undefined, token: undefined, rol: undefined } })
         }),
         {
             name: 'auth-storage'
