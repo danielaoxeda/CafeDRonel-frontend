@@ -2,12 +2,11 @@ import { useAuthStore } from '../../store/authStore.ts'
 import { LogOutIcon } from 'lucide-react'
 import CartIcon from './CartIcon'
 
-
 export default function Navbar() {
     const { user, logout } = useAuthStore()
 
     return (
-        <header className="absolute top-0 left-0 w-full z-10 bg-transparent">
+        <header className="fixed top-0 left-0 w-full z-50 bg-[#3B1F0B]/30 backdrop-blur-sm text-[#F5EBDD]">
             <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
                 <div className="flex h-16 items-center justify-between">
                     {/* Logo a la izquierda */}
@@ -22,7 +21,7 @@ export default function Navbar() {
                     {/* Enlaces + perfil a la derecha */}
                     <div className="flex items-center gap-8">
                         <nav aria-label="Global">
-                            <ul className="flex items-center gap-6 text-sm font-semibold text-[#F5EBDD]">
+                            <ul className="flex items-center gap-6 text-sm font-semibold drop-shadow-lg">
                                 <li>
                                     <a href="/" className="hover:text-[#E8C28C] transition">
                                         INICIO
@@ -38,15 +37,9 @@ export default function Navbar() {
                                         NOSOTROS
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="#" className="hover:text-[#E8C28C] transition">
-                                        CONTACTO
-                                    </a>
-                                </li>
                             </ul>
                         </nav>
                         <CartIcon />
-                        {/* Icono de perfil */}
                         {user.token === undefined ? (
                             <a href="/auth/login">
                                 <img
@@ -61,7 +54,7 @@ export default function Navbar() {
                                 onClick={logout}
                             >
                                 <LogOutIcon />
-                                Cerrar sesion
+                                Cerrar sesión
                             </button>
                         )}
                     </div>

@@ -1,23 +1,36 @@
 import { create } from 'zustand/react'
 import { persist } from 'zustand/middleware'
 
+/** Producto según el backend */
 export type Product = {
-    id: string
-    name: string
-    subtitle: string
-    description: string
-    image: string
-    price: number
+    idProducto: number
+    nombre: string
+    categoria: string
+    subtipo: string
+    descripcion: string
+    precio: number
+    stock: number
+    activo: boolean
+    image?: string 
 }
 
+/** Ítem en el carrito */
 export type CartItem = Product & { quantity: number }
+
+/** POST /pedidos */
+export type DetallePedido = {
+    idDetalle: number
+    idProducto: number
+    cantidad: number
+    precioUnitario: number
+}
 
 interface CartState {
     items: CartItem[]
     addToCart: (product: Product, qty: number) => void
-    increment: (id: string) => void
-    decrement: (id: string) => void
-    removeFromCart: (id: string) => void
+    increment: (idProducto: number) => void
+    decrement: (idProducto: number) => void
+    removeFromCart: (idProducto: number) => void
     clearCart: () => void
 }
 
@@ -27,11 +40,11 @@ export const useCartStore = create<CartState>()(
             items: [],
             addToCart: (product, qty) =>
                 set((state) => {
-                    const existing = state.items.find((item) => item.id === product.id)
+                    const existing = state.items.find((item) => item.idProducto === product.idProducto)
                     if (existing) {
                         return {
                             items: state.items.map((item) =>
-                                item.id === product.id
+                                item.idProducto === product.idProducto
                                     ? { ...item, quantity: item.quantity + qty }
                                     : item
                             ),
@@ -39,28 +52,38 @@ export const useCartStore = create<CartState>()(
                     }
                     return { items: [...state.items, { ...product, quantity: qty }] }
                 }),
-            increment: (id) =>
+            increment: (idProducto) =>
                 set((state) => ({
                     items: state.items.map((item) =>
-                        item.id === id ? { ...item, quantity: item.quantity + 1 } : item
+                        item.idProducto === idProducto ? { ...item, quantity: item.quantity + 1 } : item
                     ),
                 })),
-            decrement: (id) =>
+            decrement: (idProducto) =>
                 set((state) => ({
                     items: state.items
                         .map((item) =>
-                            item.id === id
+                            item.idProducto === idProducto
                                 ? { ...item, quantity: item.quantity - 1 }
                                 : item
                         )
                         .filter((item) => item.quantity > 0),
                 })),
-            removeFromCart: (id) =>
+            removeFromCart: (idProducto) =>
                 set((state) => ({
-                    items: state.items.filter((item) => item.id !== id),
+                    items: state.items.filter((item) => item.idProducto !== idProducto),
                 })),
             clearCart: () => set({ items: [] }),
         }),
         { name: 'cart-storage' }
     )
 )
+
+/** Helper para transformar el carrito en detalles de pedido */
+export const mapCartToDetalles = (items: CartItem[]): DetallePedido[] => {
+    return items.map((item) => ({
+        idDetalle: 0,
+        idProducto: item.idProducto,
+        cantidad: item.quantity,
+        precioUnitario: item.precio,
+    }))
+}
