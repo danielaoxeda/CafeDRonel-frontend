@@ -24,6 +24,11 @@ const navItems: NavItem[] = [
         icon: <HomeIcon />
     },
     {
+        path: '/dashboard/orders',
+        label: 'Pedidos',
+        icon: <ClipboardIcon />
+    },
+    {
         path: '/dashboard/products',
         label: 'Productos',
         icon: <ShoppingBasketIcon />

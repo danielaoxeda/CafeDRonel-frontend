@@ -15,12 +15,9 @@ export default function ClientsPage() {
     setClients(productsData);
   };
   
-
     useEffect(() => {
     fetchClients();
   }, []);
-
-  
 
   return (
     <div className="flex flex-col flex-1 p-10">

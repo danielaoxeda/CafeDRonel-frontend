@@ -45,7 +45,7 @@ export default function ClientsTable({ products, onRefresh }: ClientsTableProps)
             <DataTable
                 columns={columns}
                 data={products}
-                noDataComponent={"Aún no tienes productos registrados"}
+                noDataComponent={"Aún no tienes clientes registrados"}
                 pagination
             />
 

@@ -18,7 +18,7 @@ export default function StatCard({ title, icon, value, className, showDate }: St
   });
 
   return (
-    <div className={`w-full p-6 bg-secondary rounded-lg ${className} flex justify-between items-center`}>
+    <div className={`w-full p-6 rounded-lg ${className} flex justify-between items-center`}>
       <div className="flex flex-col gap-2">
         <p className="text-xl">{title}</p>
         {showDate && <p className="text-sm text-gray-500">{today}</p>}

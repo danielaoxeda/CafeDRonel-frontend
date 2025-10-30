@@ -17,6 +17,7 @@ import RecoveryPasswordPage from './pages/ecommerce/RecoveryPasswordPage.tsx';
 import NotFoundPage from "./pages/NotFoundPage.tsx";
 import AusPage from './pages/ecommerce/AusPage.tsx';
 import CartPage from './pages/ecommerce/CartPage.tsx'
+import OrdersPage from './pages/dashboard/OrdersPage.tsx';
 
 
 const router = createBrowserRouter([
@@ -70,6 +71,10 @@ const router = createBrowserRouter([
             {
                 path: 'home',
                 Component: DashboardHomePage
+            },
+            {
+                path: 'orders',
+                Component: OrdersPage
             },
             {
                 path: 'products',
