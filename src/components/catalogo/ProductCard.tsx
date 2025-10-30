@@ -8,8 +8,8 @@ export default function ProductCard({ product }: { product: Product }) {
             : '/img/Catalogo/ProductCard_cafe.png'
 
     return (
-        <div className="flex flex-row bg-[#E8C28C] rounded-xl shadow-md overflow-hidden border border-[#A25E2A] min-h-[180px] hover:shadow-lg transition">
-            <div className="w-[149px] h-[281px] flex-shrink-0">
+        <div className="flex flex-col sm:flex-row bg-[#E8C28C] rounded-xl shadow-md overflow-hidden border border-[#A25E2A] hover:shadow-lg transition">
+            <div className="w-full sm:w-[149px] h-[200px] sm:h-[281px] flex-shrink-0">
                 <img
                     src={product.image ?? defaultImage}
                     alt={product.nombre}
@@ -17,12 +17,14 @@ export default function ProductCard({ product }: { product: Product }) {
                 />
             </div>
 
-            <div className="flex-1 p-4 flex flex-col justify-center">
-                <h2 className="text-lg font-bold text-[#5C3A21]">{product.nombre}</h2>
+            <div className="flex-1 p-4 flex flex-col">
+                <h2 className="text-lg font-bold text-[#5C3A21] line-clamp-2">{product.nombre}</h2>
                 <p className="text-sm text-[#7A4B2A] mt-1">{product.subtipo}</p>
-                <p className="text-[#5C3A21] mt-2">{product.descripcion}</p>
-                <p className="text-[#5C3A21] font-semibold mt-2">S/. {product.precio.toFixed(2)}</p>
-                <AddToCartControls product={product} />
+                <p className="text-[#5C3A21] mt-2 line-clamp-3 flex-grow">{product.descripcion}</p>
+                <div className="mt-4">
+                    <p className="text-[#5C3A21] font-semibold mb-2">S/. {product.precio.toFixed(2)}</p>
+                    <AddToCartControls product={product} />
+                </div>
             </div>
         </div>
     )
