@@ -18,7 +18,7 @@ export default function HomePage() {
             <Navbar />
             <div className="relative">
                 <HeroSection
-                    image="/img/Inicio/cafes.png"
+                    video="/img/Inicio/fondito.mp4"
                     title="EMPIEZA TU DÍA CON UN BUEN CAFÉ"
                 />
 

@@ -39,6 +39,19 @@ export default function ProductsClientPage() {
                 image="/img/Catalogo/HeroSection_fondo.png"
                 title="PRODUCTOS"
             />
+
+            {/* GIF al costado del título */}
+            <img
+                src="/img/Catalogo/gif.gif"
+                alt="gif"
+                className="
+            absolute top-1/2 left-1/2
+            translate-y-[-50%] translate-x-[140px]
+            w-20 md:w-32
+            z-30
+        "
+
+            />
             <main className="max-w-6xl mx-auto px-4 py-12 space-y-16">
                 {/* Sección Empaques */}
                 <SectionDivider imageSrc="/img/Catalogo/separador_cafe.svg" />
